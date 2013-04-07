@@ -1,0 +1,15 @@
+.DS_Store
+*.swp
+*.lock
+profile
+*~.nib
+DerivedData/
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata
+*.moved-aside
+Pods/
+Podfile.lock
