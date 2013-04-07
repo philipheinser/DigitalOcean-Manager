@@ -1,8 +1,8 @@
 //
-//  DOAppDelegate.h
-//  DigitalOceanManager
+//  AppDelegate.h
+//  Digital Ocean Manager
 //
-//  Created by Philip Heinser on 06.04.13.
+//  Created by Philip Heinser on 01.04.13.
 //  Copyright (c) 2013 Philip Heinser. All rights reserved.
 //
 

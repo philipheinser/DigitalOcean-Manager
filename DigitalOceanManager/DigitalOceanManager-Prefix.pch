@@ -11,4 +11,10 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import "DigitalOceanAPIClient.h"
+    #import "DODroplet.h"
+    #import "DORegion.h"
+    #import "DOSize.h"
 #endif
