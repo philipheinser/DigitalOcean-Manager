@@ -33,6 +33,8 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
+    textField.text = [textField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    
     if (textField == self.cliendIDTextField) {
         [DigitalOceanAPIClient sharedClient].cliendID = self.cliendIDTextField.text;
     }
