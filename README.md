@@ -1,7 +1,7 @@
 DigitalOcean-Manager
 ====================
 
-iOS App to Manage and View your Virtual Server horsted by DigitalOcean
+iOS App to Manage and View your Virtual Server hosted by DigitalOcean
 
 ![Screenshot](Screenshots/Screenshot%202013.04.06%2018.45.01.png/?raw=true) & ![Screenshot2](Screenshots/Screenshot%202013.04.08%2016.57.39.png/?raw=true)
 
