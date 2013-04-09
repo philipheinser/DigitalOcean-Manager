@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
 
-@interface DOOptionsTableViewController : UITableViewController <UITextFieldDelegate>
+@interface DOOptionsTableViewController : UITableViewController <UITextFieldDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (weak, nonatomic) IBOutlet UITextField *cliendIDTextField;
 @property (weak, nonatomic) IBOutlet UITextField *apiKeyTextField;
