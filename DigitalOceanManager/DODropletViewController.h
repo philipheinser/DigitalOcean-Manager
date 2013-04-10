@@ -15,6 +15,7 @@
 @property DODroplet *droplet;
 
 @property (weak, nonatomic) IBOutlet UILabel *ipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *imageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
 @property (weak, nonatomic) IBOutlet UIView *whiteOverlayTopView;

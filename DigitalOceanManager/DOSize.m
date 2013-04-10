@@ -23,7 +23,7 @@
     return self;
 }
 
-+ (void)allRegionsWithBlock:(void (^)(NSArray *sizes, NSError *error))block
++ (void)allSizesWithBlock:(void (^)(NSArray *sizes, NSError *error))block
 {
     [[DigitalOceanAPIClient sharedClient] getPath:@"sizes/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *sizesFromResponse = JSON[@"sizes"];
@@ -46,7 +46,7 @@
 
 + (void)sizeWithSizeID:(NSUInteger)sizeID withBlock:(void (^)(DOSize *size))block
 {
-    [DOSize allRegionsWithBlock:^(NSArray *sizes, NSError *error) {
+    [DOSize allSizesWithBlock:^(NSArray *sizes, NSError *error) {
         for (DOSize *size in sizes) {
             if (sizeID == size.sizeID) {
                 block(size);

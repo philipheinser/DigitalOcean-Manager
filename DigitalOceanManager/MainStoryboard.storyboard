@@ -113,18 +113,26 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObG-e3-OId">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="ObG-e3-OId" firstAttribute="top" secondItem="S65-eC-wUl" secondAttribute="top" constant="43" id="055-7M-rAX"/>
                                     <constraint firstItem="1Jc-cy-CXe" firstAttribute="top" secondItem="4Ed-EV-qYw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2jG-ps-aRN"/>
-                                    <constraint firstItem="cmO-yj-NDN" firstAttribute="top" secondItem="S65-eC-wUl" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3p4-60-cd5"/>
-                                    <constraint firstItem="4Ed-EV-qYw" firstAttribute="top" secondItem="cmO-yj-NDN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="A0h-j6-DYY"/>
+                                    <constraint firstItem="ObG-e3-OId" firstAttribute="leading" secondItem="S65-eC-wUl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="494-jE-mnv"/>
+                                    <constraint firstItem="cmO-yj-NDN" firstAttribute="top" secondItem="S65-eC-wUl" secondAttribute="top" type="default" id="AK3-qG-kFz"/>
                                     <constraint firstItem="cmO-yj-NDN" firstAttribute="leading" secondItem="S65-eC-wUl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BhS-A0-aUm"/>
                                     <constraint firstAttribute="trailing" secondItem="1Jc-cy-CXe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Bqq-7j-2Qu"/>
                                     <constraint firstAttribute="trailing" secondItem="cmO-yj-NDN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MMG-At-mLJ"/>
+                                    <constraint firstItem="4Ed-EV-qYw" firstAttribute="top" secondItem="ObG-e3-OId" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="THD-l7-Myd"/>
                                     <constraint firstAttribute="trailing" secondItem="4Ed-EV-qYw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TxJ-xw-AQU"/>
+                                    <constraint firstAttribute="height" constant="133" type="user" id="ahd-s4-Wbe"/>
+                                    <constraint firstAttribute="trailing" secondItem="ObG-e3-OId" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cQK-C0-YYd"/>
                                     <constraint firstItem="1Jc-cy-CXe" firstAttribute="leading" secondItem="S65-eC-wUl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cq0-W2-uHq"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Jc-cy-CXe" secondAttribute="bottom" constant="9" id="ehj-9s-u8A"/>
                                     <constraint firstItem="4Ed-EV-qYw" firstAttribute="leading" secondItem="S65-eC-wUl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sjo-RD-jfO"/>
                                 </constraints>
                             </view>
@@ -153,7 +161,7 @@
                             <constraint firstItem="eHa-DE-vQz" firstAttribute="bottom" secondItem="vWI-bi-AHX" secondAttribute="bottom" type="default" id="OSO-LA-A6B"/>
                             <constraint firstItem="eHa-DE-vQz" firstAttribute="top" secondItem="vWI-bi-AHX" secondAttribute="top" type="default" id="Vr9-I1-Nbe"/>
                             <constraint firstItem="dEx-83-4Mn" firstAttribute="bottom" secondItem="vWI-bi-AHX" secondAttribute="bottom" type="default" id="ZeH-45-AZS"/>
-                            <constraint firstItem="S65-eC-wUl" firstAttribute="top" secondItem="vWI-bi-AHX" secondAttribute="top" type="default" id="bPa-2s-k5B"/>
+                            <constraint firstItem="S65-eC-wUl" firstAttribute="top" secondItem="vWI-bi-AHX" secondAttribute="top" type="user" id="bPa-2s-k5B"/>
                             <constraint firstItem="S65-eC-wUl" firstAttribute="trailing" secondItem="vWI-bi-AHX" secondAttribute="trailing" type="default" id="lAh-YB-3P1"/>
                             <constraint firstItem="eHa-DE-vQz" firstAttribute="trailing" secondItem="vWI-bi-AHX" secondAttribute="trailing" type="default" id="lIc-gL-m0B"/>
                             <constraint firstItem="S65-eC-wUl" firstAttribute="leading" secondItem="vWI-bi-AHX" secondAttribute="leading" type="default" id="tGu-q7-EXY"/>
@@ -162,6 +170,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Droplet Name" id="0VH-dz-Dn0"/>
                     <connections>
+                        <outlet property="imageLabel" destination="ObG-e3-OId" id="oiD-aS-EHd"/>
                         <outlet property="ipLabel" destination="cmO-yj-NDN" id="zZI-Yq-NcU"/>
                         <outlet property="mapView" destination="eHa-DE-vQz" id="hRK-Zj-iih"/>
                         <outlet property="sizeLabel" destination="4Ed-EV-qYw" id="uAz-W0-I8k"/>
@@ -339,38 +348,6 @@
     <resources>
         <image name="digitalocean.png" width="334" height="223"/>
     </resources>
-    <classes>
-        <class className="DODropletTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletTableViewCell.h"/>
-        </class>
-        <class className="DODropletViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="reboot"/>
-                <relationship kind="action" name="takeSnapshot"/>
-                <relationship kind="action" name="toogleToolbar:"/>
-                <relationship kind="outlet" name="ipLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="sizeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="whiteOverlayTopView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="DODropletsListTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletsListTableViewController.h"/>
-        </class>
-        <class className="DOOptionsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOOptionsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="apiKeyTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cliendIDTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

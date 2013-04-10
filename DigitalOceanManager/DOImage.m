@@ -31,8 +31,8 @@
         NSLog(@"%@", JSON);
         NSMutableArray *mutableImages = [NSMutableArray arrayWithCapacity:[imagesFromResponse count]];
         for (NSDictionary *attributes in imagesFromResponse) {
-            DOSize *size = [[DOSize alloc] initWithAttributes:attributes];
-            [mutableImages addObject:size];
+            DOImage *image = [[DOImage alloc] initWithAttributes:attributes];
+            [mutableImages addObject:image];
         }
         
         if (block) {
@@ -42,6 +42,18 @@
         if (block) {
             NSLog(@"%@", error.description);
             block([NSArray array], error);
+        }
+    }];
+}
+
++ (void)imageWithImageID:(NSUInteger)imageID withBlock:(void (^)(DOImage *image))block
+{
+    [DOImage allImagesWithBlock:^(NSArray *images, NSError *error) {
+        for (DOImage *image in images) {
+            if (imageID == image.imageID) {
+                block(image);
+                return;
+            }
         }
     }];
 }

@@ -17,5 +17,6 @@
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
 + (void)allImagesWithBlock:(void (^)(NSArray *images, NSError *error))block;
++ (void)imageWithImageID:(NSUInteger)imageID withBlock:(void (^)(DOImage *image))block;
 
 @end

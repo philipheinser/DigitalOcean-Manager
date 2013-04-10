@@ -31,6 +31,10 @@
         self.sizeLabel.text = size.name;
     }];
     
+    [DOImage imageWithImageID:self.droplet.imageID withBlock:^(DOImage *image) {
+        self.imageLabel.text = image.name;
+    }];
+    
     [self.whiteOverlayTopView setAlpha:0];
     
     [UIView animateWithDuration:2 animations:^{

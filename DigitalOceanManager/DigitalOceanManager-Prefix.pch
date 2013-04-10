@@ -17,4 +17,5 @@
     #import "DODroplet.h"
     #import "DORegion.h"
     #import "DOSize.h"
+    #import "DOImage.h"
 #endif

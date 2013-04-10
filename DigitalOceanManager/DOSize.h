@@ -15,7 +15,7 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
-+ (void)allRegionsWithBlock:(void (^)(NSArray *sizes, NSError *error))block;
++ (void)allSizesWithBlock:(void (^)(NSArray *sizes, NSError *error))block;
 + (void)sizeWithSizeID:(NSUInteger)sizeID withBlock:(void (^)(DOSize *size))block;
 
 @end
