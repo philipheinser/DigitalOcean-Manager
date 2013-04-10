@@ -77,6 +77,9 @@
     [self.droplet rebootDropletWithBlock:^(NSError *error) {
         if (error) {
             NSLog(@"%@", error.description);
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reboot" message:@"Your reboot has successfully started." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
     }];
 }
@@ -86,6 +89,9 @@
     [self.droplet takeSnapshotWithBlock:^(NSError *error) {
         if (error) {
             NSLog(@"%@", error.description);
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Snapshot" message:@"Your snapshot has successfully started." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
     }];
 }
