@@ -21,8 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIView *whiteOverlayTopView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 
 - (IBAction)toogleToolbar:(id)sender;
+- (IBAction)refreshDroplet:(id)sender;
 
 - (IBAction)reboot;
 - (IBAction)takeSnapshot;

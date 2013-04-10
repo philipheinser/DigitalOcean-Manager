@@ -90,4 +90,15 @@
     }];
 }
 
++(void)droplet:(NSUInteger)dropletID withBlock:(void (^)(DODroplet *, NSError *))block
+{
+    NSString *path = [NSString stringWithFormat:@"droplets/%lu/", (unsigned long)dropletID];
+    [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        DODroplet *droplet = [[DODroplet alloc] initWithAttributes:JSON[@"droplet"]];
+        block(droplet, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        block(nil, error);
+    }];
+}
+
 @end

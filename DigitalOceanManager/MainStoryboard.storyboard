@@ -168,11 +168,18 @@
                             <constraint firstItem="eHa-DE-vQz" firstAttribute="leading" secondItem="vWI-bi-AHX" secondAttribute="leading" type="default" id="vwk-Lg-e8m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Droplet Name" id="0VH-dz-Dn0"/>
+                    <navigationItem key="navigationItem" title="Droplet Name" id="0VH-dz-Dn0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1yy-NA-iUX">
+                            <connections>
+                                <action selector="refreshDroplet:" destination="T7V-JO-jyt" id="KJu-ta-tDp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageLabel" destination="ObG-e3-OId" id="oiD-aS-EHd"/>
                         <outlet property="ipLabel" destination="cmO-yj-NDN" id="zZI-Yq-NcU"/>
                         <outlet property="mapView" destination="eHa-DE-vQz" id="hRK-Zj-iih"/>
+                        <outlet property="refreshButton" destination="1yy-NA-iUX" id="R04-v9-HP0"/>
                         <outlet property="sizeLabel" destination="4Ed-EV-qYw" id="uAz-W0-I8k"/>
                         <outlet property="statusLabel" destination="1Jc-cy-CXe" id="QiU-zL-qCk"/>
                         <outlet property="toolbar" destination="dEx-83-4Mn" id="IdM-4n-Dqt"/>
@@ -348,6 +355,41 @@
     <resources>
         <image name="digitalocean.png" width="334" height="223"/>
     </resources>
+    <classes>
+        <class className="DODropletTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletTableViewCell.h"/>
+        </class>
+        <class className="DODropletViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="reboot"/>
+                <relationship kind="action" name="refreshDroplet:"/>
+                <relationship kind="action" name="takeSnapshot"/>
+                <relationship kind="action" name="toogleToolbar:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ipLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="sizeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="whiteOverlayTopView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DODropletsListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletsListTableViewController.h"/>
+        </class>
+        <class className="DOOptionsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOOptionsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="apiKeyTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cliendIDTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

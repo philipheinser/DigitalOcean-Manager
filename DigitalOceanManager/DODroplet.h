@@ -27,5 +27,6 @@
 
 
 + (void)allDropletsWithBlock:(void (^)(NSArray *droplets, NSError *error))block;
++ (void)droplet:(NSUInteger)dropletID withBlock:(void (^)(DODroplet *droplet, NSError *error))block;
 
 @end

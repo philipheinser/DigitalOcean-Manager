@@ -19,6 +19,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self setDropletUI];
+    
+    [self.whiteOverlayTopView setAlpha:0];
+    
+    [UIView animateWithDuration:2 animations:^{
+        [self.whiteOverlayTopView setAlpha:0.8];
+    }];
+}
+
+- (void)setDropletUI
+{
     self.title = self.droplet.name;
     self.ipLabel.text = self.droplet.ipAddress;
     self.statusLabel.text = self.droplet.status;
@@ -33,12 +44,6 @@
     
     [DOImage imageWithImageID:self.droplet.imageID withBlock:^(DOImage *image) {
         self.imageLabel.text = image.name;
-    }];
-    
-    [self.whiteOverlayTopView setAlpha:0];
-    
-    [UIView animateWithDuration:2 animations:^{
-        [self.whiteOverlayTopView setAlpha:0.8];
     }];
 }
 
@@ -70,6 +75,20 @@
 - (IBAction)toogleToolbar:(id)sender
 {
     [self.toolbar setHidden:!self.toolbar.hidden];
+}
+
+- (IBAction)refreshDroplet:(id)sender
+{
+    self.refreshButton.enabled = NO;
+    [DODroplet droplet:self.droplet.dropletID withBlock:^(DODroplet *droplet, NSError *error) {
+        self.refreshButton.enabled = YES;
+        if (error) {
+            NSLog(@"%@", error.description);
+        }else{
+            self.droplet = droplet;
+            [self setDropletUI];
+        }
+    }];
 }
 
 - (void)reboot
