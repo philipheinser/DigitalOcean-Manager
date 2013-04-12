@@ -19,11 +19,15 @@
 @property (readonly) NSString *status;
 @property (readonly) NSString *ipAddress;
 
+@property (retain) NSArray *powerActions;
+
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
 - (UIImage *)imageForStaus;
-- (void)rebootDropletWithBlock:(void (^)(NSError *error))block;
+
 - (void)takeSnapshotWithBlock:(void (^)(NSError *error))block;
+
+- (void)performAction:(NSString *)action WithBlock:(void (^)(NSError *error))block;
 
 
 + (void)allDropletsWithBlock:(void (^)(NSArray *droplets, NSError *error))block;

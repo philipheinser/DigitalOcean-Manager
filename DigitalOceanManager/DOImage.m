@@ -28,7 +28,6 @@
 {
     [[DigitalOceanAPIClient sharedClient] getPath:@"images/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *imagesFromResponse = JSON[@"images"];
-        NSLog(@"%@", JSON);
         NSMutableArray *mutableImages = [NSMutableArray arrayWithCapacity:[imagesFromResponse count]];
         for (NSDictionary *attributes in imagesFromResponse) {
             DOImage *image = [[DOImage alloc] initWithAttributes:attributes];

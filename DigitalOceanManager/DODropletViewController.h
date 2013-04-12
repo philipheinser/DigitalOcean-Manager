@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface DODropletViewController : UIViewController
+@interface DODropletViewController : UIViewController <UIActionSheetDelegate>
 
 @property DODroplet *droplet;
 
@@ -24,9 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 
 - (IBAction)toogleToolbar:(id)sender;
+- (IBAction)showPowerOptions:(id)sender;
 - (IBAction)refreshDroplet:(id)sender;
 
-- (IBAction)reboot;
 - (IBAction)takeSnapshot;
 
 @end

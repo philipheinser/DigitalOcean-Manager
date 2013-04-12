@@ -77,6 +77,33 @@
     [self.toolbar setHidden:!self.toolbar.hidden];
 }
 
+- (IBAction)showPowerOptions:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Power Options" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    for (int i = 0; i < [self.droplet.powerActions count]; i++) {
+        [actionSheet addButtonWithTitle:[self.droplet.powerActions objectAtIndex:i][@"name"]];
+    }
+    
+    [actionSheet addButtonWithTitle:@"Cancel"];
+    actionSheet.cancelButtonIndex = self.droplet.powerActions.count;
+    [actionSheet showFromBarButtonItem:sender animated:YES];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex < self.droplet.powerActions.count) {
+        NSString *apiMethod = [self.droplet.powerActions objectAtIndex:buttonIndex][@"apiMethod"];
+        [self.droplet performAction:apiMethod WithBlock:^(NSError *error) {
+            if (error) {
+                NSLog(@"%@", error.description);
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Power Action" message:@"Your action has successfully started." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+        }];
+    }
+}
+
 - (IBAction)refreshDroplet:(id)sender
 {
     self.refreshButton.enabled = NO;
@@ -91,19 +118,7 @@
     }];
 }
 
-- (void)reboot
-{
-    [self.droplet rebootDropletWithBlock:^(NSError *error) {
-        if (error) {
-            NSLog(@"%@", error.description);
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reboot" message:@"Your reboot has successfully started." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-        }
-    }];
-}
-
-- (void)takeSnapshot
+- (IBAction)takeSnapshot
 {
     [self.droplet takeSnapshotWithBlock:^(NSError *error) {
         if (error) {

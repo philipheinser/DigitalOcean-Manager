@@ -25,26 +25,25 @@
     _status = attributes[@"status"];
     _ipAddress = attributes[@"ip_address"];
     
+    _powerActions = @[
+                 @{@"name": @"Reboot", @"apiMethod":@"reboot"},
+                 @{@"name": @"Power Cycle", @"apiMethod":@"power_cycle"},
+                 @{@"name": @"Shutdown", @"apiMethod":@"shutdown"},
+                 @{@"name": @"Power Off", @"apiMethod":@"power_off"},
+                 @{@"name": @"Power On", @"apiMethod":@"power_on"}
+                 ];
+    
     return self;
 }
 
 - (void)takeSnapshotWithBlock:(void (^)(NSError *error))block
 {
-    NSString *path = [NSString stringWithFormat:@"droplets/%lu/snapshot/", (unsigned long)self.dropletID];
-    
-    [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-        NSString *status = JSON[@"status"];
-        if ([status isEqualToString:@"OK"]) {
-            block(nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        block(error);
-    }];
+    [self performAction:@"snapshot" WithBlock:block];
 }
 
-- (void)rebootDropletWithBlock:(void (^)(NSError *error))block
+- (void)performAction:(NSString *)action WithBlock:(void (^)(NSError *error))block
 {
-    NSString *path = [NSString stringWithFormat:@"droplets/%lu/reboot/", (unsigned long)self.dropletID];
+    NSString *path = [NSString stringWithFormat:@"droplets/%lu/%@/", (unsigned long)self.dropletID, action];
     
     [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSString *status = JSON[@"status"];
