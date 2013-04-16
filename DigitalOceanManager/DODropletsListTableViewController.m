@@ -22,6 +22,8 @@
 {
     [super viewDidLoad];
     
+    [self.tableView setBackgroundColor:[UIColor underPageBackgroundColor]];
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
                                         init];
     [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
