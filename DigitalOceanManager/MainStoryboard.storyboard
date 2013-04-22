@@ -353,6 +353,41 @@
     <resources>
         <image name="digitalocean.png" width="334" height="223"/>
     </resources>
+    <classes>
+        <class className="DODropletTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletTableViewCell.h"/>
+        </class>
+        <class className="DODropletViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshDroplet:"/>
+                <relationship kind="action" name="showPowerOptions:"/>
+                <relationship kind="action" name="takeSnapshot"/>
+                <relationship kind="action" name="toogleToolbar:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ipLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="sizeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="whiteOverlayTopView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DODropletsListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DODropletsListTableViewController.h"/>
+        </class>
+        <class className="DOOptionsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOOptionsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="apiKeyTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cliendIDTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
