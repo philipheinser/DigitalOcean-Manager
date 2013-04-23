@@ -18,4 +18,5 @@
     #import "DORegion.h"
     #import "DOSize.h"
     #import "DOImage.h"
+    #import "DOSshKey.h"
 #endif

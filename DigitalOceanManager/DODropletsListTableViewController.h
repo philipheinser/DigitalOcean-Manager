@@ -10,4 +10,6 @@
 
 @interface DODropletsListTableViewController : UITableViewController
 
+- (void)refreshData;
+
 @end

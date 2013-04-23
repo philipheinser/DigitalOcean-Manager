@@ -100,4 +100,25 @@
     }];
 }
 
++(void)newDroplet:(NSString *)name size:(NSUInteger)size_id image:(NSUInteger)image_id region:(NSUInteger)region_id sshKey:(NSUInteger)ssh_key_ids withBlock:(void (^)(DODroplet *, NSError *))block
+{
+    NSString *path = [NSString stringWithFormat:@"droplets/new?name=%@&size_id=%lu&image_id=%lu&region_id=%lu", name, (unsigned long)size_id, (unsigned long)image_id, (unsigned long)region_id];
+    if (ssh_key_ids) {
+        path = [path stringByAppendingFormat:@"&ssh_key_ids=%lu", (unsigned long)ssh_key_ids];
+    }
+    [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        NSString *status = JSON[@"droplet"];
+        if (!status) {
+            NSError *error = [NSError errorWithDomain:@"APIError" code:1202 userInfo:@{NSLocalizedDescriptionKey:@"You have not filled all required fields."}];
+            block(nil, error);
+        }else{
+            DODroplet *droplet = [[DODroplet alloc] initWithAttributes:JSON[@"droplet"]];
+            block(droplet, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error %@", error.description);
+        block(nil, error);
+    }];
+}
+
 @end

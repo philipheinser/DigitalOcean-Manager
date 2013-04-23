@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43A5B7F1726F7A200EF8B49 /* DOSshKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */; };
 		D45EE6E5170F9DEB00E76613 /* DOImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D45EE6E4170F9DEB00E76613 /* DOImage.m */; };
+		D4968C071725AB4400B2DF4C /* DONewDropletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4968C061725AB4400B2DF4C /* DONewDropletViewController.m */; };
 		D499009B170F9229007AAEED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499009A170F9229007AAEED /* UIKit.framework */; };
 		D499009D170F9229007AAEED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499009C170F9229007AAEED /* Foundation.framework */; };
 		D499009F170F9229007AAEED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499009E170F9229007AAEED /* CoreGraphics.framework */; };
@@ -48,8 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D43A5B7D1726F7A200EF8B49 /* DOSshKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOSshKey.h; sourceTree = "<group>"; };
+		D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOSshKey.m; sourceTree = "<group>"; };
 		D45EE6E3170F9DEB00E76613 /* DOImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOImage.h; sourceTree = "<group>"; };
 		D45EE6E4170F9DEB00E76613 /* DOImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOImage.m; sourceTree = "<group>"; };
+		D4968C051725AB4400B2DF4C /* DONewDropletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DONewDropletViewController.h; sourceTree = "<group>"; };
+		D4968C061725AB4400B2DF4C /* DONewDropletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DONewDropletViewController.m; sourceTree = "<group>"; };
 		D4990097170F9229007AAEED /* DigitalOceanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalOceanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D499009A170F9229007AAEED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D499009C170F9229007AAEED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -232,6 +238,8 @@
 				D49900BA170F926C007AAEED /* DODropletsListTableViewController.m */,
 				D4E274231710913900DCA46A /* DOOptionsTableViewController.h */,
 				D4E274241710913900DCA46A /* DOOptionsTableViewController.m */,
+				D4968C051725AB4400B2DF4C /* DONewDropletViewController.h */,
+				D4968C061725AB4400B2DF4C /* DONewDropletViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +255,8 @@
 				D49900C2170F926C007AAEED /* DOSize.m */,
 				D45EE6E3170F9DEB00E76613 /* DOImage.h */,
 				D45EE6E4170F9DEB00E76613 /* DOImage.m */,
+				D43A5B7D1726F7A200EF8B49 /* DOSshKey.h */,
+				D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -372,6 +382,8 @@
 				D49900F3170F92C5007AAEED /* UIImageView+AFNetworking.m in Sources */,
 				D45EE6E5170F9DEB00E76613 /* DOImage.m in Sources */,
 				D4E274251710913900DCA46A /* DOOptionsTableViewController.m in Sources */,
+				D4968C071725AB4400B2DF4C /* DONewDropletViewController.m in Sources */,
+				D43A5B7F1726F7A200EF8B49 /* DOSshKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +413,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Philip Heinser (H522C5RG2Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Philip Heinser (H522C5RG2Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -417,8 +429,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "B58D9FEE-36A5-48B9-8C2F-EB5A0794C8EA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B58D9FEE-36A5-48B9-8C2F-EB5A0794C8EA";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -435,8 +447,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Philip Heinser (H522C5RG2Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Philip Heinser (H522C5RG2Y)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -444,8 +456,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "B58D9FEE-36A5-48B9-8C2F-EB5A0794C8EA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B58D9FEE-36A5-48B9-8C2F-EB5A0794C8EA";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
