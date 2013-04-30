@@ -25,9 +25,11 @@
 - (void)loadInfos
 {
     [DOSize allSizesWithBlock:^(NSArray *sizes, NSError *error) {
-        self.sizes = sizes;
-        self.sizeStepper.maximumValue = sizes.count-1;
-        [self sizeValueChanged];
+        if (sizes.count > 0) {
+            self.sizes = sizes;
+            self.sizeStepper.maximumValue = sizes.count-1;
+            [self sizeValueChanged];
+        }
     }];
     
     [DORegion allRegionsWithBlock:^(NSArray *regions, NSError *error) {
