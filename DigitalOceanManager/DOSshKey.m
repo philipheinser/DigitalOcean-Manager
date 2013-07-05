@@ -23,6 +23,8 @@
     return self;
 }
 
+#pragma mark - Get SSH Keys From Server
+
 + (void)allSshKeysWithBlock:(void (^)(NSArray *sshKeys, NSError *error))block {
     [[DigitalOceanAPIClient sharedClient] getPath:@"ssh_keys/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *sshKeysFromResponse = JSON[@"ssh_keys"];

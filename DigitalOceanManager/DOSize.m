@@ -23,6 +23,8 @@
     return self;
 }
 
+#pragma mark - Get Sizes From Server
+
 + (void)allSizesWithBlock:(void (^)(NSArray *sizes, NSError *error))block
 {
     [[DigitalOceanAPIClient sharedClient] getPath:@"sizes/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {

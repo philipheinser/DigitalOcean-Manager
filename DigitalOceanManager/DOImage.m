@@ -24,6 +24,8 @@
     return self;
 }
 
+#pragma mark - Get Images From Server
+
 + (void)allImagesWithBlock:(void (^)(NSArray *images, NSError *error))block
 {
     [[DigitalOceanAPIClient sharedClient] getPath:@"images/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {

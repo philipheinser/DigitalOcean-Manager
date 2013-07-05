@@ -36,6 +36,8 @@
     return self;
 }
 
+#pragma mark - Droplet Actions
+
 - (void)takeSnapshotWithBlock:(void (^)(NSError *error))block
 {
     [self performAction:@"snapshot" WithBlock:block];
@@ -61,6 +63,8 @@
     }
     return nil;
 }
+
+#pragma mark - Get Droplets From Server
 
 + (void)allDropletsWithBlock:(void (^)(NSArray *droplets, NSError *error))block
 {

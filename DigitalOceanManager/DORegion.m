@@ -23,6 +23,8 @@
     return self;
 }
 
+#pragma mark - Get Regions From Server
+
 + (void)allRegionsWithBlock:(void (^)(NSArray *regions, NSError *error))block {
     [[DigitalOceanAPIClient sharedClient] getPath:@"regions/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *regionsFromResponse = JSON[@"regions"];
