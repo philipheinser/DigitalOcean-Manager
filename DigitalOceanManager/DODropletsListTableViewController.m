@@ -45,6 +45,7 @@
 -(void) credentialsChanged:(id)sender
 {
     self.addDropletButton.enabled = [[DigitalOceanAPIClient sharedClient] hasCreadentials];
+    [self.tableView reloadData];
 }
 
 - (void)refreshData {
