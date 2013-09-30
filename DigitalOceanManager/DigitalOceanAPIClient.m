@@ -93,6 +93,8 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
     }else{
         self.hasCreadentials = NO;
     }    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DigitalOceanCreadentialsChanged" object:self];
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method

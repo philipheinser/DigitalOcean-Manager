@@ -31,14 +31,20 @@
     self.refreshControl = refreshControl;
 
     [self refreshData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(credentialsChanged:) name:@"DigitalOceanCreadentialsChanged" object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (![[DigitalOceanAPIClient sharedClient] hasCreadentials]) {
-        self.addDropletButton.enabled = NO;
-    }
+    
+    [self credentialsChanged:nil];
+}
+
+-(void) credentialsChanged:(id)sender
+{
+    self.addDropletButton.enabled = [[DigitalOceanAPIClient sharedClient] hasCreadentials];
 }
 
 - (void)refreshData {
@@ -107,6 +113,11 @@
         dropletVC.droplet = self.droplets[[self.tableView indexPathForSelectedRow].row];
     }
     
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
