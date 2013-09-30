@@ -48,6 +48,8 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
     
     self.cliendID = [self.keychain objectForKey:(__bridge id)kSecAttrAccount];
     self.apiKey = [self.keychain objectForKey:(__bridge id)kSecValueData];
+    
+    [self checkForCreadentials];
 }
 
 -(void)setApiKey:(NSString *)apiKey
@@ -56,9 +58,15 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
         self.keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"DigitalOcean" accessGroup:nil];
     }
     
-    _apiKey = apiKey;
+    if ([apiKey isEqualToString:@""]) {
+        _apiKey = nil;
+    }else{
+        _apiKey = apiKey;
+    }
     
     [self.keychain setObject:apiKey forKey:(__bridge id)(kSecValueData)];
+    
+    [self checkForCreadentials];
 }
 
 -(void)setCliendID:(NSString *)cliendID
@@ -67,9 +75,24 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
         self.keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"DigitalOcean" accessGroup:nil];
     }
     
-    _cliendID = cliendID;
+    if ([cliendID isEqualToString:@""]) {
+        _cliendID = nil;
+    }else {
+        _cliendID = cliendID;
+    }
     
     [self.keychain setObject:cliendID forKey:(__bridge id)(kSecAttrAccount)];
+    
+    [self checkForCreadentials];
+}
+
+-(void)checkForCreadentials
+{
+    if (self.cliendID && self.apiKey) {
+        self.hasCreadentials = YES;
+    }else{
+        self.hasCreadentials = NO;
+    }    
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method

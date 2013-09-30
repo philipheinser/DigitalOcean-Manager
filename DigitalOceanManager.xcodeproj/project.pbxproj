@@ -319,6 +319,11 @@
 				CLASSPREFIX = DO;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Philip Heinser";
+				TargetAttributes = {
+					D4990096170F9229007AAEED = {
+						DevelopmentTeam = 6BS59SC942;
+					};
+				};
 			};
 			buildConfigurationList = D4990092170F9229007AAEED /* Build configuration list for PBXProject "DigitalOceanManager" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -466,11 +471,14 @@
 		D49900B5170F9229007AAEED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalOceanManager/DigitalOceanManager-Prefix.pch";
 				INFOPLIST_FILE = "DigitalOceanManager/DigitalOceanManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,11 +486,14 @@
 		D49900B6170F9229007AAEED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalOceanManager/DigitalOceanManager-Prefix.pch";
 				INFOPLIST_FILE = "DigitalOceanManager/DigitalOceanManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

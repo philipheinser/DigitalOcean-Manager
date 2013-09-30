@@ -33,6 +33,14 @@
     [self refreshData];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (![[DigitalOceanAPIClient sharedClient] hasCreadentials]) {
+        self.addDropletButton.enabled = NO;
+    }
+}
+
 - (void)refreshData {
     [self.refreshControl beginRefreshing];
     if ([[DigitalOceanAPIClient sharedClient].cliendID isEqualToString:@"test"]) {

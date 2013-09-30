@@ -10,6 +10,8 @@
 
 @interface DODropletsListTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addDropletButton;
+
 - (void)refreshData;
 
 @end
