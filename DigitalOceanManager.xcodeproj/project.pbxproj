@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D43A5B7F1726F7A200EF8B49 /* DOSshKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */; };
 		D45EE6E5170F9DEB00E76613 /* DOImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D45EE6E4170F9DEB00E76613 /* DOImage.m */; };
+		D475118C17FA110700FB6C0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D475118B17FA110700FB6C0A /* Images.xcassets */; };
 		D4968C071725AB4400B2DF4C /* DONewDropletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4968C061725AB4400B2DF4C /* DONewDropletViewController.m */; };
 		D499009B170F9229007AAEED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499009A170F9229007AAEED /* UIKit.framework */; };
 		D499009D170F9229007AAEED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499009C170F9229007AAEED /* Foundation.framework */; };
@@ -54,6 +55,7 @@
 		D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOSshKey.m; sourceTree = "<group>"; };
 		D45EE6E3170F9DEB00E76613 /* DOImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOImage.h; sourceTree = "<group>"; };
 		D45EE6E4170F9DEB00E76613 /* DOImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOImage.m; sourceTree = "<group>"; };
+		D475118B17FA110700FB6C0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4968C051725AB4400B2DF4C /* DONewDropletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DONewDropletViewController.h; sourceTree = "<group>"; };
 		D4968C061725AB4400B2DF4C /* DONewDropletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DONewDropletViewController.m; sourceTree = "<group>"; };
 		D4990097170F9229007AAEED /* DigitalOceanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalOceanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 				D49900C9170F926C007AAEED /* MainStoryboard.storyboard */,
 				D49900FE170F93D8007AAEED /* Images */,
 				D4BC1E5A1710E1CF00862CA3 /* other */,
+				D475118B17FA110700FB6C0A /* Images.xcassets */,
 				D49900A1170F9229007AAEED /* Supporting Files */,
 			);
 			path = DigitalOceanManager;
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D49900A5170F9229007AAEED /* InfoPlist.strings in Resources */,
+				D475118C17FA110700FB6C0A /* Images.xcassets in Resources */,
 				D49900AD170F9229007AAEED /* Default.png in Resources */,
 				D49900AF170F9229007AAEED /* Default@2x.png in Resources */,
 				D49900B1170F9229007AAEED /* Default-568h@2x.png in Resources */,
@@ -471,12 +475,14 @@
 		D49900B5170F9229007AAEED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalOceanManager/DigitalOceanManager-Prefix.pch";
 				INFOPLIST_FILE = "DigitalOceanManager/DigitalOceanManager-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -486,12 +492,14 @@
 		D49900B6170F9229007AAEED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalOceanManager/DigitalOceanManager-Prefix.pch";
 				INFOPLIST_FILE = "DigitalOceanManager/DigitalOceanManager-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
