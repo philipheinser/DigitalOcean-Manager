@@ -56,6 +56,7 @@
                 return;
             }
         }
+        block(nil);
     }];
 }
 

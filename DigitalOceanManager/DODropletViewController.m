@@ -43,7 +43,9 @@
     }];
     
     [DOImage imageWithImageID:self.droplet.imageID withBlock:^(DOImage *image) {
-        self.imageLabel.text = image.name;
+        if (image) {
+            self.imageLabel.text = image.name;
+        }
     }];
 }
 
