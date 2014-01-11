@@ -57,10 +57,19 @@
     }];
 }
 
--(UIImage *)imageForStaus {
+- (UIImage *)imageForStatus {
     if ([self.status isEqualToString:@"active"]) {
         return [UIImage imageNamed:@"GreenDot"];
     }
+    return nil;
+}
+
+- (UIColor *)colorForStatus
+{
+    if ([self.status isEqualToString:@"active"]) {
+        return [UIColor greenColor];
+    }
+    
     return nil;
 }
 

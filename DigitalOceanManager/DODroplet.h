@@ -25,7 +25,8 @@
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
 
-- (UIImage *)imageForStaus;
+- (UIImage *)imageForStatus;
+- (UIColor *)colorForStatus;
 
 - (void)takeSnapshotWithBlock:(void (^)(NSError *error))block;
 

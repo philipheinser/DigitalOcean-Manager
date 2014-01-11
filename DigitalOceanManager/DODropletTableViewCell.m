@@ -25,7 +25,8 @@
     
     self.textLabel.text = _droplet.name;
     self.detailTextLabel.text = _droplet.ipAddress;
-    self.imageView.image = [_droplet imageForStaus];
+    self.imageView.image = [[UIImage imageNamed:@"Drop_icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.imageView.tintColor = [_droplet colorForStatus];
     
     [self setNeedsDisplay];
 }
