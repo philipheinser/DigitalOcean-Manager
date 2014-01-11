@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    [self.tableView setBackgroundColor:[UIColor underPageBackgroundColor]];
+    [self.tableView setBackgroundColor:[UIColor lightGrayColor]];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
                                         init];
