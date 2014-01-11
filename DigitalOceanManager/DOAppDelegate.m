@@ -16,6 +16,8 @@
 {
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
+    self.window.tintColor = [UIColor colorWithRed:58/255.0 green:208/255.0 blue:248/255.0 alpha:1];
+    
     return YES;
 }
 							
