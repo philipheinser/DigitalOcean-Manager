@@ -116,6 +116,11 @@
     
 }
 
+- (IBAction)backToDropletsList:(UIStoryboardSegue *)segue
+{
+    
+}
+
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

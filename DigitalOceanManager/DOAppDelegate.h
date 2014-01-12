@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTHPasscodeViewController.h"
 
 @interface DOAppDelegate : UIResponder <UIApplicationDelegate>
 

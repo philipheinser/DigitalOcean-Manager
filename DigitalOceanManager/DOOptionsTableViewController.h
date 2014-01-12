@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
+#import "LTHPasscodeViewController.h"
 
 @interface DOOptionsTableViewController : UITableViewController <UITextFieldDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
 

@@ -55,6 +55,36 @@
         request.delegate = self;
         [request start];
     }
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [[LTHPasscodeViewController sharedUser] showForEnablingPasscodeInViewController: self];
+    }
+    
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        [[LTHPasscodeViewController sharedUser] showForChangingPasscodeInViewController: self];
+    }
+    
+    if (indexPath.section == 2 && indexPath.row == 2) {
+        [[LTHPasscodeViewController sharedUser] showForTurningOffPasscodeInViewController: self];
+    }
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([LTHPasscodeViewController passcodeExistsInKeychain]) {
+        if (indexPath.section == 2 && indexPath.row == 0) {
+            return NO;
+        }
+    } else {
+        if (indexPath.section == 2 && indexPath.row == 1) {
+            return NO;
+        }
+        if (indexPath.section == 2 && indexPath.row == 2) {
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 -(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4081B4F18834CC000202CD5 /* LTHNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4081B4A18834CC000202CD5 /* LTHNavigationViewController.m */; };
+		D4081B5018834CC000202CD5 /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4081B4C18834CC000202CD5 /* LTHPasscodeViewController.m */; };
+		D4081B5118834CC000202CD5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D4081B4E18834CC000202CD5 /* SFHFKeychainUtils.m */; };
+		D4081B5318834CDF00202CD5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4081B5218834CDF00202CD5 /* LICENSE.txt */; };
+		D4081B5518834FF000202CD5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4081B5418834FF000202CD5 /* QuartzCore.framework */; };
 		D43A5B7F1726F7A200EF8B49 /* DOSshKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */; };
 		D45EE6E5170F9DEB00E76613 /* DOImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D45EE6E4170F9DEB00E76613 /* DOImage.m */; };
 		D475118C17FA110700FB6C0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D475118B17FA110700FB6C0A /* Images.xcassets */; };
@@ -51,6 +56,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4081B4918834CC000202CD5 /* LTHNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHNavigationViewController.h; sourceTree = "<group>"; };
+		D4081B4A18834CC000202CD5 /* LTHNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHNavigationViewController.m; sourceTree = "<group>"; };
+		D4081B4B18834CC000202CD5 /* LTHPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHPasscodeViewController.h; sourceTree = "<group>"; };
+		D4081B4C18834CC000202CD5 /* LTHPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHPasscodeViewController.m; sourceTree = "<group>"; };
+		D4081B4D18834CC000202CD5 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		D4081B4E18834CC000202CD5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		D4081B5218834CDF00202CD5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D4081B5418834FF000202CD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D43A5B7D1726F7A200EF8B49 /* DOSshKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOSshKey.h; sourceTree = "<group>"; };
 		D43A5B7E1726F7A200EF8B49 /* DOSshKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOSshKey.m; sourceTree = "<group>"; };
 		D45EE6E3170F9DEB00E76613 /* DOImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOImage.h; sourceTree = "<group>"; };
@@ -125,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4081B5518834FF000202CD5 /* QuartzCore.framework in Frameworks */,
 				D4E2742217108CA700DCA46A /* StoreKit.framework in Frameworks */,
 				D4990100170F94AE007AAEED /* MobileCoreServices.framework in Frameworks */,
 				D49900FA170F9370007AAEED /* SystemConfiguration.framework in Frameworks */,
@@ -139,6 +153,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4081B4818834CA900202CD5 /* PasscodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4081B5218834CDF00202CD5 /* LICENSE.txt */,
+				D4081B4918834CC000202CD5 /* LTHNavigationViewController.h */,
+				D4081B4A18834CC000202CD5 /* LTHNavigationViewController.m */,
+				D4081B4B18834CC000202CD5 /* LTHPasscodeViewController.h */,
+				D4081B4C18834CC000202CD5 /* LTHPasscodeViewController.m */,
+				D4081B4D18834CC000202CD5 /* SFHFKeychainUtils.h */,
+				D4081B4E18834CC000202CD5 /* SFHFKeychainUtils.m */,
+			);
+			name = PasscodeViewController;
+			sourceTree = "<group>";
+		};
 		D499008E170F9229007AAEED = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +187,7 @@
 		D4990099170F9229007AAEED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4081B5418834FF000202CD5 /* QuartzCore.framework */,
 				D49900F4170F92D0007AAEED /* AFNetworking */,
 				D4E2742117108CA700DCA46A /* StoreKit.framework */,
 				D49900FF170F94AE007AAEED /* MobileCoreServices.framework */,
@@ -287,6 +316,7 @@
 		D4BC1E5A1710E1CF00862CA3 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				D4081B4818834CA900202CD5 /* PasscodeViewController */,
 				D49900C5170F926C007AAEED /* KeychainItemWrapper.h */,
 				D49900C6170F926C007AAEED /* KeychainItemWrapper.m */,
 			);
@@ -350,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4081B5318834CDF00202CD5 /* LICENSE.txt in Resources */,
 				D49900A5170F9229007AAEED /* InfoPlist.strings in Resources */,
 				D475118C17FA110700FB6C0A /* Images.xcassets in Resources */,
 				D49900AD170F9229007AAEED /* Default.png in Resources */,
@@ -372,6 +403,7 @@
 			files = (
 				D49900A7170F9229007AAEED /* main.m in Sources */,
 				D49900CA170F926C007AAEED /* DODropletTableViewCell.m in Sources */,
+				D4081B5118834CC000202CD5 /* SFHFKeychainUtils.m in Sources */,
 				D49900CB170F926C007AAEED /* DODropletsListTableViewController.m in Sources */,
 				D49900CC170F926C007AAEED /* DODropletViewController.m in Sources */,
 				D49900CD170F926C007AAEED /* DODroplet.m in Sources */,
@@ -393,6 +425,8 @@
 				D4E274251710913900DCA46A /* DOOptionsTableViewController.m in Sources */,
 				D4968C071725AB4400B2DF4C /* DONewDropletViewController.m in Sources */,
 				D43A5B7F1726F7A200EF8B49 /* DOSshKey.m in Sources */,
+				D4081B4F18834CC000202CD5 /* LTHNavigationViewController.m in Sources */,
+				D4081B5018834CC000202CD5 /* LTHPasscodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
