@@ -7,7 +7,7 @@ iOS App to Manage and View your Virtual Server hosted by DigitalOcean
 
 https://itunes.apple.com/app/digitalocean-manager/id633128302
 
-![Screenshot](Screenshots/Screenshot.png/?raw=true)
+![Screenshot](Screenshots/Screenshot.png?raw=true)
 
 ###Contributing
 If you want to fix bugs, I would be happy. If you want a feature to be added, open a issue and tag it as feature and maybe you also send a pull request which i will review as quickly as posible.
