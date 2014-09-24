@@ -18,7 +18,7 @@
     }
     
     _sizeID = [attributes[@"id"] integerValue];
-    _name = attributes[@"name"];
+    _name = attributes[@"slug"];
     
     return self;
 }

@@ -12,7 +12,6 @@
 @interface DigitalOceanAPIClient : AFHTTPClient
 
 @property (retain) KeychainItemWrapper *keychain;
-@property (retain, nonatomic) NSString *cliendID;
 @property (retain, nonatomic) NSString *apiKey;
 @property BOOL hasCreadentials;
 

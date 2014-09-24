@@ -34,19 +34,12 @@
     self.ipLabel.text = self.droplet.ipAddress;
     self.statusLabel.text = self.droplet.status;
     
-    [DORegion regionWithRegionID:self.droplet.regionID withBlock:^(DORegion *region) {
-        [self setMapLocationWithLocationName:region.name];
-    }];
+    [self setMapLocationWithLocationName:self.droplet.region.name];
     
-    [DOSize sizeWithSizeID:self.droplet.sizeID withBlock:^(DOSize *size) {
-        self.sizeLabel.text = size.name;
-    }];
+    self.sizeLabel.text = self.droplet.size.name;
     
-    [DOImage imageWithImageID:self.droplet.imageID withBlock:^(DOImage *image) {
-        if (image) {
-            self.imageLabel.text = image.name;
-        }
-    }];
+    self.imageLabel.text = self.droplet.image.name;
+    
 }
 
 - (void)setMapLocationWithLocationName:(NSString *)locationName

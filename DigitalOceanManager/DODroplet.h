@@ -8,14 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DORegion.h"
+#import "DOImage.h"
+#import "DOSize.h"
+
 @interface DODroplet : NSObject
 
 @property (readonly) NSUInteger dropletID;
 @property (readonly) NSString *name;
 @property (readonly) BOOL backups_active;
 @property (readonly) NSUInteger regionID;
+@property (readonly) DORegion *region;
 @property (readonly) NSUInteger imageID;
+@property (readonly) DOImage *image;
 @property (readonly) NSUInteger sizeID;
+@property (readonly) DOSize *size;
 @property (readonly) NSString *status;
 @property (readonly) NSString *ipAddress;
 

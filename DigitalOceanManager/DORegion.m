@@ -47,7 +47,7 @@
 
 + (void)regionWithRegionID:(NSUInteger)regionID withBlock:(void (^)(DORegion *))block
 {
-    if ([[DigitalOceanAPIClient sharedClient].cliendID isEqualToString:@"test"]) {
+    if ([[DigitalOceanAPIClient sharedClient].apiKey isEqualToString:@"test"]) {
         DORegion *testRegion = [[DORegion alloc] initWithAttributes:@{@"name":@"Amsterdam"}];
         block(testRegion);
     }else{

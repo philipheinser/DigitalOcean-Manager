@@ -20,7 +20,6 @@
     
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
 
-    self.cliendIDTextField.text = [DigitalOceanAPIClient sharedClient].cliendID;
     self.apiKeyTextField.text = [DigitalOceanAPIClient sharedClient].apiKey;
 }
 
@@ -28,9 +27,6 @@
 {
     textField.text = [textField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
-    if (textField == self.cliendIDTextField) {
-        [DigitalOceanAPIClient sharedClient].cliendID = self.cliendIDTextField.text;
-    }
     if (textField == self.apiKeyTextField) {
         [DigitalOceanAPIClient sharedClient].apiKey = self.apiKeyTextField.text;
     }

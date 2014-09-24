@@ -13,7 +13,7 @@
 
 @implementation DigitalOceanAPIClient
 
-NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.com/";
+NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.com/v2/";
 
 + (DigitalOceanAPIClient *)sharedClient {
     static DigitalOceanAPIClient *_sharedClient = nil;
@@ -46,7 +46,6 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
         self.keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"DigitalOcean" accessGroup:nil];
     }
     
-    self.cliendID = [self.keychain objectForKey:(__bridge id)kSecAttrAccount];
     self.apiKey = [self.keychain objectForKey:(__bridge id)kSecValueData];
     
     [self checkForCreadentials];
@@ -69,26 +68,9 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
     [self checkForCreadentials];
 }
 
--(void)setCliendID:(NSString *)cliendID
-{
-    if (!self.keychain) {
-        self.keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"DigitalOcean" accessGroup:nil];
-    }
-    
-    if ([cliendID isEqualToString:@""]) {
-        _cliendID = nil;
-    }else {
-        _cliendID = cliendID;
-    }
-    
-    [self.keychain setObject:cliendID forKey:(__bridge id)(kSecAttrAccount)];
-    
-    [self checkForCreadentials];
-}
-
 -(void)checkForCreadentials
 {
-    if (self.cliendID && self.apiKey) {
+    if (self.apiKey) {
         self.hasCreadentials = YES;
     }else{
         self.hasCreadentials = NO;
@@ -100,9 +82,9 @@ NSString * const kAFDigitalOceanAPIBaseURLString = @"https://api.digitalocean.co
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                       path:(NSString *)path
                                 parameters:(NSDictionary *)parameters {
-    
-    NSString *separator = [path rangeOfString:@"?"].location == NSNotFound ? @"?" : @"&";
-    path = [path stringByAppendingFormat:@"%@client_id=%@&api_key=%@", separator, self.cliendID, self.apiKey];
+    if (self.apiKey) {
+        [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", self.apiKey]];
+    }
     
     return [super requestWithMethod:method path:path parameters:parameters];
 }

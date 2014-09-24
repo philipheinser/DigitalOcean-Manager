@@ -20,10 +20,13 @@
     _dropletID = [attributes[@"id"] integerValue];
     _sizeID = [attributes[@"size_id"] integerValue];
     _regionID = [attributes[@"region_id"] integerValue];
+    _region = [[DORegion alloc] initWithAttributes:attributes[@"region"]];
     _imageID = [attributes[@"image_id"] integerValue];
+    _image = [[DOImage alloc] initWithAttributes:attributes[@"image"]];
     _name = attributes[@"name"];
     _status = attributes[@"status"];
-    _ipAddress = attributes[@"ip_address"];
+    _ipAddress = attributes[@"networks"][@"v4"][0][@"ip_address"];
+    _size = [[DOSize alloc] initWithAttributes:attributes[@"size"]];
     
     _powerActions = @[
                  @{@"name": @"Reboot", @"apiMethod":@"reboot"},

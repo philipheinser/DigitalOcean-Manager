@@ -50,7 +50,7 @@
 
 - (void)refreshData {
     [self.refreshControl beginRefreshing];
-    if ([[DigitalOceanAPIClient sharedClient].cliendID isEqualToString:@"test"]) {
+    if ([[DigitalOceanAPIClient sharedClient].apiKey isEqualToString:@"test"]) {
         [self.tableView beginUpdates];
         NSDictionary *testData = @{@"name": @"Test Droplet",
                                    @"ip_address": @"192.168.0.1",
