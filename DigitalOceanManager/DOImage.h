@@ -13,6 +13,7 @@
 @property (readonly) NSUInteger imageID;
 @property (readonly) NSString *name;
 @property (readonly) NSString *distribution;
+@property (readonly) NSString *slug;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 

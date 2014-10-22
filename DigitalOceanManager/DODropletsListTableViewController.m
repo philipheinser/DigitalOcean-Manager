@@ -40,6 +40,8 @@
     [super viewDidAppear:animated];
     
     [self credentialsChanged:nil];
+    
+    [self refreshData];
 }
 
 -(void) credentialsChanged:(id)sender

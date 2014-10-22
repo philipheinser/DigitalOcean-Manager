@@ -47,7 +47,7 @@
 
 - (IBAction)saveDroplet:(id)sender
 {
-    [DODroplet newDroplet:self.picketName size:self.picketSize.sizeID image:self.picketImage.imageID region:self.picketRegion.regionID sshKey:self.picketSshKey.sshkeyID withBlock:^(DODroplet *droplet, NSError *error) {
+    [DODroplet newDroplet:self.dropletNameTextField.text size:self.picketSize.slug image:self.picketImage.imageID region:self.picketRegion.slug sshKey:self.picketSshKey.slug withBlock:^(DODroplet *droplet, NSError *error) {
         if (error) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];

@@ -116,24 +116,44 @@
     }];
 }
 
-+(void)newDroplet:(NSString *)name size:(NSUInteger)size_id image:(NSUInteger)image_id region:(NSUInteger)region_id sshKey:(NSUInteger)ssh_key_ids withBlock:(void (^)(DODroplet *, NSError *))block
++(void)newDroplet:(NSString *)name size:(NSString *)size_id image:(NSUInteger)image_id region:(NSString *)region_id sshKey:(NSString *)ssh_key_ids withBlock:(void (^)(DODroplet *, NSError *))block
 {
-    NSString *path = [NSString stringWithFormat:@"droplets/new?name=%@&size_id=%lu&image_id=%lu&region_id=%lu", name, (unsigned long)size_id, (unsigned long)image_id, (unsigned long)region_id];
-    if (ssh_key_ids) {
-        path = [path stringByAppendingFormat:@"&ssh_key_ids=%lu", (unsigned long)ssh_key_ids];
+    NSString *path = @"droplets";
+    
+    NSMutableDictionary *data;
+    
+    if (size_id && image_id && region_id) {
+         data = @{
+                                      @"name": name,
+                                      @"size": size_id,
+                                      @"image":  @(image_id),
+                                      @"region":  region_id
+                                      }.mutableCopy;
     }
-    [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-        NSString *status = JSON[@"droplet"];
-        if (!status) {
-            NSError *error = [NSError errorWithDomain:@"APIError" code:1202 userInfo:@{NSLocalizedDescriptionKey:@"You have not filled all required fields."}];
-            block(nil, error);
-        }else{
-            DODroplet *droplet = [[DODroplet alloc] initWithAttributes:JSON[@"droplet"]];
-            block(droplet, nil);
+    
+    if (ssh_key_ids && data) {
+        [data setValue:@[ssh_key_ids] forKey:@"ssh_keys"];
+    }
+    
+    NSMutableURLRequest *request = [[DigitalOceanAPIClient sharedClient] requestWithMethod:@"POST" path:path parameters:nil];
+    
+    if (data) {
+        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:data options:kNilOptions error:nil];
+    }
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (httpResponse.statusCode == 200) {
+            block(nil, nil);
+        } else {
+            if (connectionError) {
+                block(nil, connectionError);
+            } else {
+                NSString *info = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSError *error = [NSError errorWithDomain:@"DigitalOcean" code:10023 userInfo:@{NSLocalizedDescriptionKey: info}];
+                block(nil, error);
+            }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error %@", error.description);
-        block(nil, error);
     }];
 }
 

@@ -12,6 +12,7 @@
 
 @property (readonly) NSUInteger sshkeyID;
 @property (readonly) NSString *name;
+@property (readonly) NSString *slug;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 

@@ -19,6 +19,7 @@
     
     _regionID = [attributes[@"id"] integerValue];
     _name = attributes[@"name"];
+    _slug = attributes[@"slug"];
     
     return self;
 }

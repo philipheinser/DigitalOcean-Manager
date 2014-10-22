@@ -20,6 +20,7 @@
     _imageID = [attributes[@"id"] integerValue];
     _name = attributes[@"name"];
     _distribution = attributes[@"distribution"];
+    _slug = attributes[@"slug"];
     
     return self;
 }

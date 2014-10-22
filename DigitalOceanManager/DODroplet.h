@@ -44,6 +44,6 @@
 
 + (void)droplet:(NSUInteger)dropletID withBlock:(void (^)(DODroplet *droplet, NSError *error))block;
 
-+ (void)newDroplet:(NSString *)name size:(NSUInteger)size_id image:(NSUInteger)image_id region:(NSUInteger)region_id sshKey:(NSUInteger)ssh_key_ids withBlock:(void (^)(DODroplet *droplet, NSError *error))block;
++(void)newDroplet:(NSString *)name size:(NSString *)size_id image:(NSUInteger)image_id region:(NSString *)region_id sshKey:(NSString *)ssh_key_ids withBlock:(void (^)(DODroplet *, NSError *))block;
 
 @end
