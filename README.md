@@ -1,5 +1,6 @@
 DigitalOcean-Manager
 ====================
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/philipheinser/DigitalOcean-Manager?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 iOS App to Manage and View your Virtual Server hosted by DigitalOcean
 
