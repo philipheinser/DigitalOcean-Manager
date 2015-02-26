@@ -53,21 +53,21 @@
     }
     
     if (indexPath.section == 2 && indexPath.row == 0) {
-        [[LTHPasscodeViewController sharedUser] showForEnablingPasscodeInViewController: self];
+        [[LTHPasscodeViewController sharedUser] showForEnablingPasscodeInViewController: self asModal:YES];
     }
     
     if (indexPath.section == 2 && indexPath.row == 1) {
-        [[LTHPasscodeViewController sharedUser] showForChangingPasscodeInViewController: self];
+        [[LTHPasscodeViewController sharedUser] showForChangingPasscodeInViewController: self asModal:YES];
     }
     
     if (indexPath.section == 2 && indexPath.row == 2) {
-        [[LTHPasscodeViewController sharedUser] showForTurningOffPasscodeInViewController: self];
+        [[LTHPasscodeViewController sharedUser] showForDisablingPasscodeInViewController: self asModal:YES];
     }
 }
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([LTHPasscodeViewController passcodeExistsInKeychain]) {
+    if ([LTHPasscodeViewController doesPasscodeExist]) {
         if (indexPath.section == 2 && indexPath.row == 0) {
             return NO;
         }

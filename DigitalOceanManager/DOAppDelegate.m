@@ -42,8 +42,11 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    if ([LTHPasscodeViewController passcodeExistsInKeychain]) {
-        [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation: YES];
+    if ([LTHPasscodeViewController doesPasscodeExist]) {
+        if ([LTHPasscodeViewController didPasscodeTimerEnd])
+            [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:YES
+                                                                     withLogout:NO
+                                                                 andLogoutTitle:nil];
     }
 }
 
