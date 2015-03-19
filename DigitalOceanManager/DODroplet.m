@@ -48,11 +48,15 @@
 
 - (void)performAction:(NSString *)action WithBlock:(void (^)(NSError *error))block
 {
-    NSString *path = [NSString stringWithFormat:@"droplets/%lu/%@/", (unsigned long)self.dropletID, action];
+    NSString *path = [NSString stringWithFormat:@"droplets/%lu/actions", (unsigned long)self.dropletID];
     
-    [[DigitalOceanAPIClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-        NSString *status = JSON[@"status"];
-        if ([status isEqualToString:@"OK"]) {
+    
+    
+    [[DigitalOceanAPIClient sharedClient] postPath:path parameters:@{
+                                                                    @"type": action
+                                                                    } success:^(AFHTTPRequestOperation *operation, id JSON) {
+        NSString *status = JSON[@"action"][@"status"];
+        if ([status isEqualToString:@"in-progress"]) {
             block(nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
