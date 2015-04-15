@@ -70,7 +70,7 @@
     UIActionSheet *picker = [[UIActionSheet alloc] initWithTitle:@"Images" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     
     for (DOImage *image in self.images) {
-        [picker addButtonWithTitle:image.name];
+        [picker addButtonWithTitle:image.longName];
     }
     
     [picker addButtonWithTitle:@"Cancel"];
@@ -109,7 +109,7 @@
     if ([actionSheet.title isEqualToString:@"Images"]) {
         if (buttonIndex < self.images.count) {
             self.picketImage = self.images[buttonIndex];
-            [self.imageButton setTitle:self.picketImage.name forState:UIControlStateNormal];
+            [self.imageButton setTitle:self.picketImage.longName forState:UIControlStateNormal];
         }
     }
     if ([actionSheet.title isEqualToString:@"Region"]) {

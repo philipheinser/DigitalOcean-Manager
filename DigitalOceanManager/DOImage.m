@@ -25,6 +25,11 @@
     return self;
 }
 
+-(NSString *)longName
+{
+    return [[self.distribution stringByAppendingString:@" "] stringByAppendingString:self.name];
+}
+
 #pragma mark - Get Images From Server
 
 + (void)allImagesWithBlock:(void (^)(NSArray *images, NSError *error))block

@@ -14,6 +14,7 @@
 @property (readonly) NSString *name;
 @property (readonly) NSString *distribution;
 @property (readonly) NSString *slug;
+@property (readonly) NSString *longName;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 

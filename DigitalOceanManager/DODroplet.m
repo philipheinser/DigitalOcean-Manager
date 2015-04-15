@@ -143,14 +143,16 @@
     
     if (data) {
         request.HTTPBody = [NSJSONSerialization dataWithJSONObject:data options:kNilOptions error:nil];
+        [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        if (httpResponse.statusCode == 200) {
+        if (httpResponse.statusCode == 202) {
             block(nil, nil);
         } else {
             if (connectionError) {
+                NSLog(connectionError);
                 block(nil, connectionError);
             } else {
                 NSString *info = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
