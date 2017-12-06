@@ -152,7 +152,7 @@
             block(nil, nil);
         } else {
             if (connectionError) {
-                NSLog(connectionError);
+                NSLog(@"%@", connectionError);
                 block(nil, connectionError);
             } else {
                 NSString *info = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
